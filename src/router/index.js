@@ -9,7 +9,7 @@ function PrivateRoute({ children }) {
   if (token) {
     return children;
   }
-  return <Navigate to="/auth" />;
+  return <Navigate to="/login" />;
 }
 
 function PublicRoute({ children }) {
