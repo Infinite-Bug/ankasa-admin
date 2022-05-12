@@ -14,8 +14,8 @@ export default function CardList(params) {
             <p className="infoText">{params.pic} | {params.phone}</p>
           </div>
           <div className="col-md-4 boxButton">
+            <button className={params.isActive === "Active" ? "active" : "nonActive" } >{params.isActive}</button>
             <button className="update">Update</button>
-            <button className="delete">Delete</button>
           </div>
         </div>
     </div>
