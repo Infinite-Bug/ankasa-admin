@@ -21,7 +21,7 @@ export default function Airline() {
       {
         airline.data.map((item, index) => (
           <div key={index}>
-            <CardList title={item.name} pic={item.pic} phone={item.phone} date={item.created_date} src={`${process.env.REACT_APP_API_URL}/${item.photo}`} isActive={item.is_active ? "Active" : "Non Active"} />
+            <CardList title={item.name} pic={item.pic} phone={item.phone} date={item.created_date} src={`${process.env.REACT_APP_API_URL}/${item.photo}`} isActive={item.is_active ? "Active" : "Non Active"} btnIsActive={() => alert('Active')} btnUpdate={() => alert('Update')} btnDelete={() => alert('Delete')} />
           </div>
         ))
       }

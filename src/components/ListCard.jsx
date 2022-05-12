@@ -15,9 +15,9 @@ export default function CardList(params) {
             </p>
           </div>
           <div className="col-md-5 boxButton">
-            <button className={params.isActive === "Active" ? "active" : "danger" } >{params.isActive}</button>
-            <button className="update">Update</button>
-            <button className="danger">Delete</button>
+            <button className={params.isActive === "Active" ? "active" : "danger" } onClick={params.btnIsActive} >{params.isActive}</button>
+            <button className="update" onClick={params.btnUpdate}>Update</button>
+            <button className="danger" onClick={params.btnDelete} >Delete</button>
           </div>
         </div>
     </div>
