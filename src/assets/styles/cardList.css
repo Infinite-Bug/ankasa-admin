@@ -1,0 +1,60 @@
+.cardlist {
+  border-radius: 5px;
+}
+
+.cardlist .boxLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.cardlist .logoAirline {
+  width: auto;
+  height: 60px;
+}
+
+.cardlist .info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.cardlist .title {
+  font-size: 42px;
+  font-weight: 600;
+  color:rgba(35, 149, 255, 1);
+  margin-bottom: -5px;
+}
+
+.cardlist .infoText {
+  color: rgba(89, 89, 89, 1);
+  margin-left: 2px;
+}
+
+.cardlist .boxButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cardlist .update {
+  width: 150px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px rgba(35, 149, 255, 1) solid;
+  font-weight: 600;
+  color: rgba(35, 149, 255, 1);
+  background-color: transparent;
+}
+
+.cardlist .delete {
+  width: 150px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px red solid;
+  font-weight: 600;
+  color: red;
+  background-color: transparent;
+}
