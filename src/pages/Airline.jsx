@@ -14,14 +14,14 @@ export default function Airline() {
   useEffect(() => {
     dispatch(getListAirline())
   }, [dispatch])
-  console.log(airline.data[0].is_active)
 
+  
   return (
     <div>
       {
         airline.data.map((item, index) => (
           <div key={index}>
-            <CardList title={item.name} pic={item.pic} phone={item.phone} src={`${process.env.REACT_APP_UPI_URL}/${item.photo}`} isActive={"Active"} />
+            <CardList title={item.name} pic={item.pic} phone={item.phone} date={item.created_date} src={`${process.env.REACT_APP_API_URL}/${item.photo}`} isActive={item.is_active ? "Active" : "Non Active"} />
           </div>
         ))
       }
