@@ -4,6 +4,6 @@
   font-family: 'Poppins', sans-serif !important;
 }
 
-a:hover {
+a:hover, .menu-link:hover {
   font-weight: bold;
 }

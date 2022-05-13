@@ -1,10 +1,7 @@
 const style = {
-  sidebarColor: {
-    backgroundColor: '#2395FF'
-  },
-  white: {
-    color: '#FFFFFF'
-  }
+    tableMargin: {
+      margin: '40px 80px'
+    }
 }
 
 export default style;
