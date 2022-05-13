@@ -24,3 +24,19 @@ export const getListAirline = () => async (dispatch) => {
     })
   }
 }
+
+export const deleteAirline = (id) => async () => {
+  const token = localStorage.getItem('token')
+  return new Promise((resolve, reject) => {
+    axios
+      .delete(`${process.env.REACT_APP_API_URL}/airlines/${id}`, {
+        headers: {
+        token
+      }
+    }).then((res) => {
+      resolve(res)
+    }).catch((err) => {
+      reject(err)
+    })
+  })
+}
