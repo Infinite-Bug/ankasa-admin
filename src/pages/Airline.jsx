@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import CardList from '../components/ListCard'
 import {getListAirline, deleteAirline, suspend} from '../redux/actions/airline'
+import Swal from 'sweetalert2'
 
 export default function Airline() {
   const navigate = useNavigate()
@@ -17,13 +18,30 @@ export default function Airline() {
   }, [dispatch])
 
   const onDelete = (id) => {
-    deleteAirline(id)
-      .then((res) => {
-        console.log(res)
-        dispatch(getListAirline())
-      }).catch((err) => {
-  console.log(err.message)
-})
+    Swal.fire({
+      title: 'Are you sure delete this airline?',
+      icon: 'warning',
+      showCancelButton: true,
+      showLoaderOnConfirm: true,
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteAirline(id)
+          .then((response) => {
+            Swal.fire({
+              title: response.message,
+              icon: 'success'
+            })
+            dispatch(getListAirline())
+          })
+          .catch((err) => {
+            Swal.fire({
+              title: 'Delete failed!',
+              icon: 'error'
+          })
+        })
+      }
+    })
   }
   
   const onSuspend = (id, isActive) => {
