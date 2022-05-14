@@ -43,46 +43,59 @@ export const getDetailAirline = (id, navigate) => async (dispatch) => {
 };
 
 
-export const createAirline = (body) => {
-    const token = localStorage.getItem("token")
-    const id = localStorage.getItem("id")
+export const createAirline = async (body, setErrors) => {
 
-    // console.log(body)
+    try {
+        const token = localStorage.getItem("token")
+        // const id = localStorage.getItem("id")
 
-    return new Promise((resolve, reject) => {
-        axios.post(`${process.env.REACT_APP_API_URL}/airlines`, body,
+        await axios.post(`${process.env.REACT_APP_API_URL}/airlines`, body,
             {
                 headers: {
-                    token: token
+                    token: token,
                 }
             })
-            .then((response) => {
-                // console.log(response)
-                resolve(response.data)
-            })
-            .catch((err) => {
-                // console.log(err)
-                reject(err)
-            })
-    })
+
+        return true;
+
+    } catch (error) {
+        if (error.response) {
+            if (Array.isArray(error.response.data.error)) {
+                setErrors(error.response.data.error);
+            } else {
+                setErrors([{ msg: error.response.data.error }]);
+            }
+        } else {
+            setErrors([{ msg: error.message }]);
+        }
+
+        return false;
+    }
 };
 
+export const updateAirline = async (id, body, setErrors) => {
+    try {
+        const token = localStorage.getItem("token")
 
-export const updateAirline = (id, body) => {
-    const token = localStorage.getItem("token")
-    // const id = localStorage.getItem("id")
-
-    return new Promise((resolve, reject) => {
-        axios.put(`${process.env.REACT_APP_API_URL}/airlines/${id}`, body, {
+        await axios.put(`${process.env.REACT_APP_API_URL}/airlines/${id}`, body, {
             headers: {
-                token: token
+                token: token,
+                "Content-Type": "multipart/form-data"
             }
         })
-            .then((response) => {
-                resolve(response.data)
-            })
-            .catch((err) => {
-                reject(err)
-            })
-    })
+
+        return true;
+    } catch (error) {
+        if (error.response) {
+            if (Array.isArray(error.response.data.error)) {
+                setErrors(error.response.data.error);
+            } else {
+                setErrors([{ msg: error.response.data.error }]);
+            }
+        } else {
+            setErrors([{ msg: error.message }]);
+        }
+
+        return false;
+    }
 };
