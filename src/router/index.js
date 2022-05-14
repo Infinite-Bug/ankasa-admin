@@ -33,16 +33,16 @@ export default function router() {
         <Route path="*" element={<NotFound />} />
         <Route path="/createAirline">
           <Route index element={
-            // <PrivateRoute>
-            <CreateAirline />
-            // </ PrivateRoute>
+            <PrivateRoute>
+              <CreateAirline />
+            </ PrivateRoute>
           } />
         </Route>
         <Route path="/airline/:id">
           <Route index element={
-            // <PrivateRoute>
-            <UpdateAirline />
-            // </ PrivateRoute>
+            <PrivateRoute>
+              <UpdateAirline />
+            </ PrivateRoute>
           } />
         </Route>
       </Routes>
