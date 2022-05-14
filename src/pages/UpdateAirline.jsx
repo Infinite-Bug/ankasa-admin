@@ -3,6 +3,7 @@ import '../assets/styles/createairline.css'
 import { useDispatch, useSelector } from "react-redux";
 import { getDetailAirline, updateAirline } from '../redux/actions/airline'
 import { useNavigate, useParams } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export default function UpdateAirline() {
     // localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMmFiZTJiLWVmZmItNDdjNS04NjQwLTA4Yjk0NDRmNTBmMiIsImxldmVsIjoxLCJpYXQiOjE2NTI1MDk0MTcsImV4cCI6MTY1MjUzMTAxN30.F_rYNsNgZQBDBrLwn_7jUu6rnDJAYlaK4CG6wwtJ_i4")
@@ -44,7 +45,11 @@ export default function UpdateAirline() {
         const updateAirlineStatus = await updateAirline(id, formData, setErrors)
 
         if (updateAirlineStatus) {
-            alert("Update Airline success")
+            Swal.fire({
+                title: 'Success',
+                text: 'Update Airline success',
+                icon: 'success',
+            })
             dispatch(getDetailAirline(id, navigate))
         }
 
@@ -61,11 +66,15 @@ export default function UpdateAirline() {
                             </div>
                             <div className="col-12 fill-profile w-100">
                                 <div className="col-12 form-input">
-                                    {
-                                        errors.map((error, index) => (
-                                            <li key={index}>{error.msg}</li>
-                                        ))
-                                    }
+                                    {errors.length > 0 && (
+                                        <div className="alert alert-danger mx-0">
+                                            <ul className="m-0">
+                                                {errors.map((error, index) => (
+                                                    <li key={index}>{error.msg}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
                                     <form onSubmit={(e) => { onSubmit(e) }} className="d-flex flex-column">
                                         <div className="form-contact col-6 d-flex flex-column">
                                             <label>Name</label>

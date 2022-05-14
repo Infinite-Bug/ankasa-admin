@@ -3,10 +3,11 @@ import '../assets/styles/createairline.css'
 // import { useDispatch } from "react-redux";
 import { createAirline } from '../redux/actions/airline'
 // import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export default function CreateAirline() {
-    // localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMmFiZTJiLWVmZmItNDdjNS04NjQwLTA4Yjk0NDRmNTBmMiIsImxldmVsIjoxLCJpYXQiOjE2NTI0NDAxMjgsImV4cCI6MTY1MjQ2MTcyOH0.rTSYs-p8DB_dU0PJt3LwWA7nxVmry7yh2kMAbtN97jY")
-    // localStorage.setItem("id", "122abe2b-effb-47c5-8640-08b9444f50f2")
+    localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMmFiZTJiLWVmZmItNDdjNS04NjQwLTA4Yjk0NDRmNTBmMiIsImxldmVsIjoxLCJpYXQiOjE2NTI1MzU0OTgsImV4cCI6MTY1MjU1NzA5OH0.7tuFDfOlds1FvcOW7VxYmy8xwrYJDtipHst9yg43C7Y")
+    localStorage.setItem("id", "122abe2b-effb-47c5-8640-08b9444f50f2")
 
     // const dispatch = useDispatch()
     // const navigate = useNavigate()
@@ -34,7 +35,11 @@ export default function CreateAirline() {
         const createAirlineStatus = await createAirline(formData, setErrors)
 
         if (createAirlineStatus) {
-            alert("Add airline success")
+            Swal.fire({
+                title: 'Success',
+                text: 'Add airline success',
+                icon: 'success',
+            })
         }
 
         setIsLoading(false);
@@ -50,11 +55,15 @@ export default function CreateAirline() {
                         </div>
                         <div className="col-12 fill-profile">
                             <div className="col-12 form-input">
-                                {
-                                    errors.map((error, index) => (
-                                        <li key={index}>{error.msg}</li>
-                                    ))
-                                }
+                                {errors.length > 0 && (
+                                    <div className="alert alert-danger mx-0">
+                                        <ul className="m-0">
+                                            {errors.map((error, index) => (
+                                                <li key={index}>{error.msg}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                                 <form onSubmit={(e) => onSubmit(e)} className="d-flex flex-column">
                                     <div className="form-contact col-6 d-flex flex-column">
                                         <label>Name</label>
@@ -64,7 +73,7 @@ export default function CreateAirline() {
                                         <label>Phone</label>
                                         <input onChange={(e) => setPhone(e.target.value)} type="text" required />
                                         <label>Photo</label>
-                                        <input onChange={(e) => setPhoto(e.target.files[0])} type="file" />
+                                        <input onChange={(e) => setPhoto(e.target.files[0])} type="file" required />
                                     </div>
 
                                     {
