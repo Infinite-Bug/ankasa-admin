@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function AddProduct() {
   // localStorage.setItem(
-  //   "token",
-  //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzNzUyZjZlLWYwZTQtNGEwMy1hOTJlLTNkYmVmYjkwMWRlMyIsImxldmVsIjowLCJpYXQiOjE2NTIxNzM2MDMsImV4cCI6MTY1MjE5NTIwM30.GhEsAgPJwXxRenzYA-9TArpNpY_-FYmSfVsZrI25wQI"
+  // "token",
+  // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1N2NhM2NiLTI4YTYtNGQ2Mi05MGY3LTFjNTE4ZTdlY2UzYSIsImxldmVsIjoxLCJpYXQiOjE2NTI1NTk3MzQsImV4cCI6MTY1MjU4MTMzNH0.lT-rA02lLtYw1DU6pZI1rgbbqdbkBIgdYf-yoNIgc20"
   // );
-  // localStorage.setItem("id", "c3752f6e-f0e4-4a03-a92e-3dbefb901de3");
+  // localStorage.setItem("id", "257ca3cb-28a6-4d62-90f7-1c518e7ece3a");
 
   const token = localStorage.getItem("token");
   const [form, setForm] = useState({
@@ -23,6 +24,13 @@ export default function AddProduct() {
     estimation: "",
   });
   const [airlines, setAirlines] = useState([]);
+  const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    document.title = `${process.env.REACT_APP_APP_NAME} - Add Ticket`;
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     axios
@@ -49,53 +57,61 @@ export default function AddProduct() {
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    if (
-      form.airline_id &&
-      form.destination &&
-      form.origin &&
-      form.price &&
-      form.stock &&
-      form.type &&
-      form.transit_total &&
-      form.gate &&
-      form.terminal &&
-      form.flight_date &&
-      form.estimation
-    ) {
-      axios
-        .post(`${process.env.REACT_APP_API_URL}/product`, form, {
-          headers: {
-            token,
-          },
-        })
-        .then(() => {
-          alert("Berhasil menambahkan product");
+    setIsLoading(true);
 
-          setForm({
-            airline_id: "",
-            origin: "",
-            destination: "",
-            price: 0,
-            stock: 0,
-            type: "",
-            transit_total: 0,
-            gate: "",
-            terminal: "",
-            flight_date: "",
-            estimation: "",
-          });
-        })
-        .catch((err) => {
-          alert(err.message);
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/product`, form, {
+        headers: {
+          token,
+        },
+      })
+      .then(() => {
+        Swal.fire("Success!", "Ticket added successfully!", "success");
+        setIsLoading(false);
+
+        setForm({
+          airline_id: "",
+          origin: "",
+          destination: "",
+          price: 0,
+          stock: 0,
+          type: "",
+          transit_total: 0,
+          gate: "",
+          terminal: "",
+          flight_date: "",
+          estimation: "",
         });
-    } else {
-      alert("Semua input harus diisi!");
-    }
+      })
+      .catch((error) => {
+        if (error.response) {
+          if (Array.isArray(error.response.data.error)) {
+            setErrors(error.response.data.error);
+          } else {
+            setErrors([{ msg: error.response.data.error }]);
+          }
+        } else {
+          setErrors([{ msg: error.message }]);
+        }
+
+        setIsLoading(false);
+      });
+
+    window.scrollTo(0, 0);
   };
 
   return (
     <div className="container my-4">
-      <h1 className="text-center">Add Product</h1>
+      <h1 className="text-center">Add Ticket</h1>
+      {errors.length > 0 && (
+        <div className="alert alert-danger mx-0 mx-md-auto" style={{ maxWidth: "500px" }}>
+          <ul className="m-0">
+            {errors.map((error, index) => (
+              <li key={index}>{error.msg}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       <form
         className="mx-md-auto mx-2 mt-4"
         style={{ maxWidth: "500px" }}
@@ -307,9 +323,24 @@ export default function AddProduct() {
             </div>
           </div>
         </div>
-        <button className="btn btn-lg btn-primary w-100 mt-2" type="submit">
-          Submit
-        </button>
+        {isLoading ? (
+          <button
+            class="btn btn-lg btn-primary w-100 mt-2"
+            type="submit"
+            disabled
+          >
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Loading...</span>
+          </button>
+        ) : (
+          <button className="btn btn-lg btn-primary w-100 mt-2" type="submit">
+            Submit
+          </button>
+        )}
       </form>
     </div>
   );
