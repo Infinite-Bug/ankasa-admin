@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function AddProduct() {
   // localStorage.setItem(
@@ -26,6 +27,7 @@ export default function AddProduct() {
   const [airlines, setAirlines] = useState([]);
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = `${process.env.REACT_APP_APP_NAME} - Add Ticket`;
@@ -69,19 +71,7 @@ export default function AddProduct() {
         Swal.fire("Success!", "Ticket added successfully!", "success");
         setIsLoading(false);
 
-        setForm({
-          airline_id: "",
-          origin: "",
-          destination: "",
-          price: 0,
-          stock: 0,
-          type: "",
-          transit_total: 0,
-          gate: "",
-          terminal: "",
-          flight_date: "",
-          estimation: "",
-        });
+        navigate("/product");
       })
       .catch((error) => {
         if (error.response) {
@@ -104,7 +94,10 @@ export default function AddProduct() {
     <div className="container my-4">
       <h1 className="text-center">Add Ticket</h1>
       {errors.length > 0 && (
-        <div className="alert alert-danger mx-0 mx-md-auto" style={{ maxWidth: "500px" }}>
+        <div
+          className="alert alert-danger mx-0 mx-md-auto"
+          style={{ maxWidth: "500px" }}
+        >
           <ul className="m-0">
             {errors.map((error, index) => (
               <li key={index}>{error.msg}</li>
@@ -126,16 +119,11 @@ export default function AddProduct() {
             name="airline_id"
             className="form-control"
             onChange={onChangeHandler}
+            value={form.airline_id}
           >
-            <option selected={form.airline_id === ""} value="">
-              Select Airline
-            </option>
+            <option value="">Select Airline</option>
             {airlines.map((airline) => (
-              <option
-                selected={airline.id === form.airline_id}
-                key={airline.id}
-                value={airline.id}
-              >
+              <option key={airline.id} value={airline.id}>
                 {airline.name}
               </option>
             ))}
@@ -219,22 +207,12 @@ export default function AddProduct() {
                 name="type"
                 className="form-control"
                 onChange={onChangeHandler}
+                value={form.type}
               >
-                <option selected={form.type === ""} value="">
-                  Select Type
-                </option>
-                <option selected={form.type === "economy"} value="economy">
-                  Economy
-                </option>
-                <option selected={form.type === "business"} value="business">
-                  Business
-                </option>
-                <option
-                  selected={form.type === "firstclass"}
-                  value="firstclass"
-                >
-                  First Class
-                </option>
+                <option value="">Select Type</option>
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+                <option value="firstclass">First Class</option>
               </select>
             </div>
           </div>

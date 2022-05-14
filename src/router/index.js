@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Landing from "../pages/Landing";
 import AddProduct from "../pages/AddProduct";
+import EditProduct from "../pages/EditProduct";
 import NotFound from "../pages/NotFound";
 
 function PrivateRoute({ children }) {
@@ -35,6 +36,16 @@ export default function router() {
             element={
               <PrivateRoute>
                 <AddProduct />
+              </PrivateRoute>
+            }
+          />
+        </Route>
+        <Route path="/edit-product/:id">
+          <Route
+            index
+            element={
+              <PrivateRoute>
+                <EditProduct />
               </PrivateRoute>
             }
           />
