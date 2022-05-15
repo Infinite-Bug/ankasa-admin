@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Products from "../pages/Products";
 import Landing from "../pages/Landing";
 import Airline from "../pages/Airline";
 import Login from "../pages/Login";
@@ -31,8 +32,29 @@ export default function router() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route path="/">
-          <Route index element={<Landing />} />
+          <Route index element={<Products />} />
+        </Route>
+        <Route path="/add-product">
+          <Route
+            index
+            element={
+              <PublicRoute>
+                <AddProduct />
+              </PublicRoute>
+            }
+          />
+        </Route>
+        <Route path="/edit-product/:id">
+          <Route
+            index
+            element={
+              <PublicRoute>
+                <EditProduct />
+              </PublicRoute>
+            }
+          />
         </Route>
         <Route path="/airline">
           <Route index element={<Airline />} />
