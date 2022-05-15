@@ -32,6 +32,7 @@ export default function router() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route path="/">
           <Route index element={<Products />} />
         </Route>
@@ -63,14 +64,14 @@ export default function router() {
           <Route index element={
             <PrivateRoute>
               <CreateAirline />
-            </ PrivateRoute>
+            </PrivateRoute>
           } />
         </Route>
         <Route path="/airline/:id">
           <Route index element={
             <PrivateRoute>
               <UpdateAirline />
-            </ PrivateRoute>
+            </PrivateRoute>
           } />
         </Route>
       </Routes>
