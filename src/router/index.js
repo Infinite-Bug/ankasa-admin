@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Landing from "../pages/Landing";
+import Login from "../pages/Login";
 import AddProduct from "../pages/AddProduct";
 import EditProduct from "../pages/EditProduct";
 import NotFound from "../pages/NotFound";
@@ -31,26 +32,6 @@ export default function router() {
       <Routes>
         <Route path="/">
           <Route index element={<Landing />} />
-        </Route>
-        <Route path="/add-product">
-          <Route
-            index
-            element={
-              <PrivateRoute>
-                <AddProduct />
-              </PrivateRoute>
-            }
-          />
-        </Route>
-        <Route path="/edit-product/:id">
-          <Route
-            index
-            element={
-              <PrivateRoute>
-                <EditProduct />
-              </PrivateRoute>
-            }
-          />
         </Route>
         <Route path="*" element={<NotFound />} />
         <Route path="/createAirline">

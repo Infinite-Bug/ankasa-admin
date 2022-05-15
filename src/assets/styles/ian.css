@@ -1,0 +1,290 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.ian .background{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.ian .background .image{
+    height: 100vh;
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ian .background .image::after{
+    content: "";
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #2395FF;
+}
+.ian .background .logo{
+    z-index: 99;
+    height: 500px;
+    width: 463px;
+    background-image: url("../icons/logo.svg");
+    background-repeat: no-repeat;
+    background-size: ian;
+    background-position: center;
+    position: absolute;
+}
+.ian .background .jumbotron{
+    height: 100vh;
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ian .background .jumbotron .form-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    margin-top: 30px;
+    margin-bottom: 150px;
+}
+.ian .background .jumbotron .form-title .icon{
+    background-image: url("../icons/icon.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 27px;
+    width: 40px;
+}
+.ian .background .jumbotron .form-title .text{
+    font-size: 30px;
+}
+.ian .background .jumbotron .form-input{
+    display: flex;
+    flex-direction: column;
+}
+.ian .background .jumbotron .form-input .input{
+    border: none;
+    border-bottom: 2px solid #aaaaaa;
+    margin-left: 9px;
+    height: 45px;
+    width: 350px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.ian .background .jumbotron .form-input .input:focus{
+    outline-style: none;
+}
+.ian .background .jumbotron .form-input h1{
+    font-weight: bold;
+}
+.ian .background .jumbotron .check{
+    display: flex;
+    align-items: center;
+    width: 350px;
+}
+.ian .background .jumbotron .check .checkbox{
+    height: 15px;
+    width: 15px;
+    background-color: #2395FF;
+    margin-right: 10px;
+    outline: #2395FF;
+}
+.ian .background .jumbotron .button{
+    width: 350px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #2395FF;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.ian .navbar-brand .form-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ian .navbar-brand .form-title .icon{
+    background-image: url("../icons/icon.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 27px;
+    width: 40px;
+}
+.ian .navbar-brand .form-title .text{
+    font-size: 30px;
+}
+.ian .form-search{
+    margin-left: 50px;
+    width: 280px;
+    height: 50px;
+    background-color: #EFEFEF;
+    display: flex;
+    border-radius: 15px;
+}
+.ian .form-search .icon{
+    background-image: url('../icons/icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+}
+.ian .form-search .input{
+    font-family: airbnb;
+    background-color: #EFEFEF;
+    border-style: none;
+    width: 250px;
+    border-radius: 15px;
+}
+.ian .form-search .input:focus{
+    outline-style: none;
+}
+.ian .form-page{
+    display: flex;
+}
+.ian .form-page .text{
+    margin-left: 30px;
+}
+.ian .form-user{
+    display: flex;
+    align-items: center;
+    margin-left: 400px;
+}
+.ian .form-user .icon-message{
+    background-image: url('../icons/icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+}
+.ian .form-user .icon-notification{
+    background-image: url('../icons/icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+}
+.ian .form-admin{
+    display: flex;
+    font-size: 25px;
+}
+.ian .background .jumbotron .form-password{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ian .background .jumbotron .password{
+    background-image: url('../icons/pass.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+    margin-left: -35px;
+    width: 35px;
+    height: 35px;
+    border: none;
+}
+.ian .background .jumbotron .password:focus{
+    outline-style: none;
+}
+@media screen and (max-width: 1200px){
+    .ian .form-user{
+        margin-left: 245px;
+    }
+}
+@media screen and (max-width: 1045px){
+    .ian .form-user{
+        margin-left: 215px;
+    }
+    .ian .jumbotron .form .form-title {
+        width: 169px;
+    }
+    .ian .bottom small {
+        margin-right: 517px;
+    }
+}
+@media screen and (max-width: 890px){
+    .ian .background .image{
+        display: none;
+    }
+    .ian .background .jumbotron{
+        width: 100%;
+    }
+    .ian .form-user{
+        margin-left: 73px;
+    }
+    .ian .jumbotron .form .form-title {
+        width: 169px;
+    }
+    .ian .bottom small {
+        margin-right: 517px;
+    }
+}
+@media screen and (max-width: 550px){
+    .ian .background .image{
+        display: none;
+    }
+    .ian .background .jumbotron{
+        width: 100%;
+    }
+    .ian .image{
+        display: none;
+    }
+    .ian .background{
+        width: 100%;
+    }
+    .ian .jumbotron{
+        flex-direction: column;
+    }
+    .ian .jumbotron .form{
+        width: 100%;
+    }
+    .ian .jumbotron .form .images{
+        flex-direction: row;
+    }
+    .ian .jumbotron .form .images img{
+        width: 180px;
+        height: 60px;
+        margin-right: 10px;
+    }
+    .ian .jumbotron .form ul{
+        display: flex;
+    }
+    .ian .jumbotron .form ul li{
+        margin: 0px 10px 0px 10px;
+    }
+    .ian .jumbotron .form .form-icon img{
+        margin-bottom: 20px;
+    }
+    .ian .bottom small{
+        margin-right: 0px;
+        font-size: large;
+    }
+    .ian .bottom{
+        display: flex;
+        height: 50vh;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .ian .form-page{
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+    .ian .form-user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0px;
+    }
+}

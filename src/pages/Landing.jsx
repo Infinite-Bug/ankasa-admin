@@ -1,5 +1,10 @@
 import React from "react";
-
+import Navbar from "../components/Navbar";
 export default function Landing() {
-  return <div>Landing</div>;
+  return (
+    <>
+      <Navbar />
+      <div>Landing</div>
+    </>
+  );
 }
