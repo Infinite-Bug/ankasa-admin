@@ -4,12 +4,6 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 export default function AddProduct() {
-  // localStorage.setItem(
-  // "token",
-  // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1N2NhM2NiLTI4YTYtNGQ2Mi05MGY3LTFjNTE4ZTdlY2UzYSIsImxldmVsIjoxLCJpYXQiOjE2NTI1NTk3MzQsImV4cCI6MTY1MjU4MTMzNH0.lT-rA02lLtYw1DU6pZI1rgbbqdbkBIgdYf-yoNIgc20"
-  // );
-  // localStorage.setItem("id", "257ca3cb-28a6-4d62-90f7-1c518e7ece3a");
-
   const token = localStorage.getItem("token");
   const [form, setForm] = useState({
     airline_id: "",

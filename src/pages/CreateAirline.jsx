@@ -7,9 +7,6 @@ import Swal from 'sweetalert2'
 import Navbar from '../components/Navbar'
 
 export default function CreateAirline() {
-    localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMmFiZTJiLWVmZmItNDdjNS04NjQwLTA4Yjk0NDRmNTBmMiIsImxldmVsIjoxLCJpYXQiOjE2NTI1MzU0OTgsImV4cCI6MTY1MjU1NzA5OH0.7tuFDfOlds1FvcOW7VxYmy8xwrYJDtipHst9yg43C7Y")
-    localStorage.setItem("id", "122abe2b-effb-47c5-8640-08b9444f50f2")
-
     // const dispatch = useDispatch()
     // const navigate = useNavigate()
     const [name, setName] = useState("")
