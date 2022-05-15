@@ -32,17 +32,23 @@ export default function router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
         <Route path="/">
-          <Route index element={<Landing />} />
+          <Route
+            index
+            element={
+              <PrivateRoute>
+                <Landing />
+              </PrivateRoute>
+            }
+          />
         </Route>
         <Route path="/product">
           <Route
             index
             element={
-              <PublicRoute>
+              <PrivateRoute>
                 <Products />
-              </PublicRoute>
+              </PrivateRoute>
             }
           />
         </Route>
@@ -50,9 +56,9 @@ export default function router() {
           <Route
             index
             element={
-              <PublicRoute>
+              <PrivateRoute>
                 <AddProduct />
-              </PublicRoute>
+              </PrivateRoute>
             }
           />
         </Route>
@@ -60,14 +66,21 @@ export default function router() {
           <Route
             index
             element={
-              <PublicRoute>
+              <PrivateRoute>
                 <EditProduct />
-              </PublicRoute>
+              </PrivateRoute>
             }
           />
         </Route>
         <Route path="/airline">
-          <Route index element={<Airline />} />
+          <Route
+            index
+            element={
+              <PrivateRoute>
+                <Airline />
+              </PrivateRoute>
+            }
+          />
         </Route>
         <Route path="*" element={<NotFound />} />
         <Route path="/createAirline">
