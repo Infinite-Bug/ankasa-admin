@@ -1,0 +1,93 @@
+.cardlist {
+  position: relative;
+  border-radius: 5px;
+  margin-top: 30px;
+  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.10);
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.10);
+  -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.10);
+}
+
+.cardlist .boxLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.cardlist .logoAirline {
+  width: auto;
+  height: 60px;
+}
+
+.cardlist .info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.cardlist .title {
+  font-size: 42px;
+  font-weight: 600;
+  color:rgba(35, 149, 255, 1);
+  margin-bottom: -5px;
+  letter-spacing: 1px;
+}
+
+.cardlist .infoText {
+  color: rgba(89, 89, 89, 1);
+  margin-left: 2px;
+  font-size: 14px;
+}
+
+.cardlist .boxButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cardlist .update {
+  width: 130px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px rgba(35, 149, 255, 1) solid;
+  font-weight: 600;
+  color: rgba(35, 149, 255, 1);
+  background-color: transparent;
+}
+
+.cardlist .active {
+  width: 130px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px rgb(47, 255, 47) solid;
+  font-weight: 600;
+  color: rgb(47, 255, 47);
+  background-color: transparent;
+}
+
+.cardlist .danger {
+  width: 130px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px red solid;
+  font-weight: 600;
+  color: red;
+  background-color: transparent;
+}
+
+.cardlist .delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  border: red solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  background-color: transparent;
+  color: red;
+}
