@@ -1,0 +1,95 @@
+/* @media screen and (max-width: 700px) {
+    .hanifAirline .card {
+        display: none;
+    }
+} */
+
+.container-fluid {
+    background-color: #F5F6FA !important;
+    height: 100vh;
+}
+
+.hanifAirline {
+    padding: 20px;
+    display: flex;
+    position: relative;
+}
+
+.hanifAirline .card {
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.hanifAirline .card h3 {
+    color: #2395FF;
+}
+
+.hanifAirline .card h5 {
+    color: #2395FF;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.hanifAirline .card h6 {
+    color: black;
+    font-weight: bold;
+}
+
+.hanifAirline .card label {
+    color: #9B96AB;
+}
+
+.hanifAirline .card input {
+    border: none;
+    border-bottom: 1px solid #9B96AB;
+    margin-bottom: 20px;
+}
+
+.hanifAirline .card .row {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hanifAirline .card input:focus {
+    outline: none;
+}
+
+.hanifAirline .card .header-booking {
+    margin-bottom: 20px;
+}
+
+.hanifAirline .card .header-booking .my-booking {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+.hanifAirline .card .row .fill-profile .title .spaci-header {
+    margin-right: 10px;
+}
+
+.hanifAirline .card .row .fill-profile .form-input form .spaci-content {
+    margin-right: 10px;
+}
+
+.hanifAirline .card .row .fill-profile .form-input {
+    margin-bottom: 30px;
+    margin-left: 30%;
+    width: 70%;
+}
+
+.hanifAirline .card .row .fill-profile .form-input form button {
+    width: 120px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #2395FF;
+    border: none;
+    color: #F5F6FA;
+    margin-left: 20%;
+}
+
+.hanifAirline .card .row .fill-profile .form-input form .form-contact .row .radio label input {
+    margin-right: 10px;
+}
