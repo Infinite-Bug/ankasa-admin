@@ -4,6 +4,7 @@ import '../assets/styles/createairline.css'
 import { createAirline } from '../redux/actions/airline'
 // import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
+import Navbar from '../components/Navbar'
 
 export default function CreateAirline() {
     localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMmFiZTJiLWVmZmItNDdjNS04NjQwLTA4Yjk0NDRmNTBmMiIsImxldmVsIjoxLCJpYXQiOjE2NTI1MzU0OTgsImV4cCI6MTY1MjU1NzA5OH0.7tuFDfOlds1FvcOW7VxYmy8xwrYJDtipHst9yg43C7Y")
@@ -47,6 +48,7 @@ export default function CreateAirline() {
 
     return (
         <>
+        <Navbar />
             <div className="container-fluid hanifAirline ml-0 mr-0">
                 <div className="card w-100">
                     <div className="row">

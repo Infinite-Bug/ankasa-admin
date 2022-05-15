@@ -54,12 +54,18 @@ function App() {
                 <DropdownMenu end>
                   <DropdownItem
                     onClick={() => {
-                      navigate("/login");
+                      navigate("/createAirline");
                     }}
                   >
                     add airlines
                   </DropdownItem>
-                  <DropdownItem>list airlines</DropdownItem>
+                  <DropdownItem
+                    onClick={() => {
+                      navigate("/airline");
+                    }}
+                  >
+                    list airlines
+                  </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               <UncontrolledDropdown nav inNavbar style={{ marginLeft: "40px" }}>
@@ -69,19 +75,33 @@ function App() {
                 <DropdownMenu end>
                   <DropdownItem
                     onClick={() => {
-                      navigate("/login");
+                      navigate("/add-product");
                     }}
                   >
                     add product
                   </DropdownItem>
-                  <DropdownItem>list product</DropdownItem>
+                  <DropdownItem
+                    onClick={() => {
+                      navigate("/login");
+                    }}
+                  >
+                    list product
+                  </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </div>
           </Nav>
           <div className="form-user">
-              <button type="button" onClick={()=>{logout()}} style={{border: 'none',backgroundColor:'white'}}>Logout</button>
-            </div>
+            <button
+              type="button"
+              onClick={() => {
+                logout();
+              }}
+              style={{ border: "none", backgroundColor: "white" }}
+            >
+              Logout
+            </button>
+          </div>
         </Collapse>
       </Navbar>
     </nav>
