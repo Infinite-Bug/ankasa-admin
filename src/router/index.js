@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Landing from "../pages/Landing";
-import Airline from '../pages/Airline'
+import Airline from "../pages/Airline";
 import Login from "../pages/Login";
 import AddProduct from "../pages/AddProduct";
 import EditProduct from "../pages/EditProduct";
@@ -39,18 +39,54 @@ export default function router() {
         </Route>
         <Route path="*" element={<NotFound />} />
         <Route path="/createAirline">
-          <Route index element={
-            <PrivateRoute>
-              <CreateAirline />
-            </ PrivateRoute>
-          } />
+          <Route
+            index
+            element={
+              <PrivateRoute>
+                <CreateAirline />
+              </PrivateRoute>
+            }
+          />
         </Route>
         <Route path="/airline/:id">
-          <Route index element={
-            <PrivateRoute>
-              <UpdateAirline />
-            </ PrivateRoute>
-          } />
+          <Route
+            index
+            element={
+              <PrivateRoute>
+                <UpdateAirline />
+              </PrivateRoute>
+            }
+          />
+        </Route>
+        <Route path="/add-product">
+          <Route
+            index
+            element={
+              <PrivateRoute>
+                <AddProduct />
+              </PrivateRoute>
+            }
+          />
+        </Route>
+        <Route path="/edit-product/:id">
+          <Route
+            index
+            element={
+              <PrivateRoute>
+                <EditProduct />
+              </PrivateRoute>
+            }
+          />
+        </Route>
+        <Route path="/login">
+          <Route
+            index
+            element={
+              <PublicRoute>
+                <Login />
+              </PublicRoute>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>
