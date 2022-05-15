@@ -2,7 +2,11 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Landing from "../pages/Landing";
 import Login from "../pages/Login";
+import AddProduct from "../pages/AddProduct";
+import EditProduct from "../pages/EditProduct";
 import NotFound from "../pages/NotFound";
+import CreateAirline from "../pages/CreateAirline";
+import UpdateAirline from "../pages/UpdateAirline";
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem("token");
@@ -29,8 +33,21 @@ export default function router() {
         <Route path="/">
           <Route index element={<Landing />} />
         </Route>
-        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/createAirline">
+          <Route index element={
+            <PrivateRoute>
+              <CreateAirline />
+            </ PrivateRoute>
+          } />
+        </Route>
+        <Route path="/airline/:id">
+          <Route index element={
+            <PrivateRoute>
+              <UpdateAirline />
+            </ PrivateRoute>
+          } />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
