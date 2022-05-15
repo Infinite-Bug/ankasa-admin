@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import CardList from '../components/ListCard'
 import {getListAirline, deleteAirline, suspend} from '../redux/actions/airline'
 import Swal from 'sweetalert2'
+import Navbar from '../components/Navbar'
 
 export default function Airline() {
   const navigate = useNavigate()
@@ -54,7 +55,8 @@ export default function Airline() {
       console.log(err)
     })
   }
-  return (
+  return (<>
+  <Navbar />
     <div>
       {
         airline.data.map((item, index) => (
@@ -64,5 +66,6 @@ export default function Airline() {
         ))
       }
     </div>
+    </>
   )
 }

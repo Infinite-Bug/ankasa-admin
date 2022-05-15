@@ -6,8 +6,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 export default function UpdateAirline() {
-    // localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMmFiZTJiLWVmZmItNDdjNS04NjQwLTA4Yjk0NDRmNTBmMiIsImxldmVsIjoxLCJpYXQiOjE2NTI1MDk0MTcsImV4cCI6MTY1MjUzMTAxN30.F_rYNsNgZQBDBrLwn_7jUu6rnDJAYlaK4CG6wwtJ_i4")
-    // localStorage.setItem("id", "122abe2b-effb-47c5-8640-08b9444f50f2")
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -28,7 +26,7 @@ export default function UpdateAirline() {
 
     useEffect(() => {
         dispatch(getDetailAirline(id, navigate))
-    }, [dispatch, navigate])
+    }, [dispatch, id, navigate])
 
     const onSubmit = async (e) => {
         e.preventDefault()
