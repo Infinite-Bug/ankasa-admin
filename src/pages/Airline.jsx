@@ -10,7 +10,7 @@ export default function Airline() {
   const dispatch = useDispatch()
   
   const airline = useSelector((state) => {
-    return state.airline
+    return state.listAirline
   })
 
   useEffect(() => {
