@@ -46,7 +46,7 @@ export default function CreateAirline() {
 
     return (
         <>
-            <Navbar />
+        <Navbar />
             <div className="container-fluid hanifAirline ml-0 mr-0">
                 <div className="card w-100">
                     <div className="row">
