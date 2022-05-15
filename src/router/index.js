@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Landing from "../pages/Landing";
+import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
 
 function PrivateRoute({ children }) {
@@ -28,6 +29,7 @@ export default function router() {
         <Route path="/">
           <Route index element={<Landing />} />
         </Route>
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
