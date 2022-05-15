@@ -7,6 +7,10 @@ import Swal from 'sweetalert2'
 import Navbar from '../components/Navbar'
 
 export default function CreateAirline() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7c485bfcd029cd041db13503c90863dc14edc753
     // const dispatch = useDispatch()
     // const navigate = useNavigate()
     const [name, setName] = useState("")
