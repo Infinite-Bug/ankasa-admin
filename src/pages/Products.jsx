@@ -6,6 +6,7 @@ import '../assets/styles/utility.css';
 
 export default function Products() {
   return <div style={style.tableMargin}>
+    <h1 className="text-center">Tickets</h1>
     <Table striped bordered>
       <thead>
         <tr className="text-center">
@@ -64,7 +65,7 @@ export default function Products() {
             </Row>
             <Row className="py-2">
               <Col>
-                <Button color="primary">Edit</Button>
+                <Button color="primary" href='/edit-product/1'>Edit</Button>
               </Col>
             </Row>
             <Row className="py-2">
@@ -72,10 +73,8 @@ export default function Products() {
                 <Button color="danger" onClick={() => {
                   Swal.fire({
                     title: 'Are you sure to delete this product?',
-                    showDenyButton: true,
                     showCancelButton: true,
-                    confirmButtonText: 'Delete',
-                    denyButtonText: `Don't delete`,
+                    confirmButtonText: 'Delete'
                   }).then((result) => {
                     /* Read more about isConfirmed, isDenied below */
                     if (result.isConfirmed) {
@@ -94,7 +93,7 @@ export default function Products() {
     <div>
       <Row>
         <Col md={2}>
-          <Button color="success">Add Products</Button>
+          <Button color="success" href='/add-product'>Add Products</Button>
         </Col>
       </Row>
     </div>

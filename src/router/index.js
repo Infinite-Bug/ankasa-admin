@@ -34,9 +34,9 @@ export default function router() {
           <Route
             index
             element={
-              <PrivateRoute>
+              <PublicRoute>
                 <AddProduct />
-              </PrivateRoute>
+              </PublicRoute>
             }
           />
         </Route>
@@ -44,9 +44,9 @@ export default function router() {
           <Route
             index
             element={
-              <PrivateRoute>
+              <PublicRoute>
                 <EditProduct />
-              </PrivateRoute>
+              </PublicRoute>
             }
           />
         </Route>
