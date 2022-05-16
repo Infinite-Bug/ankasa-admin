@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import '../assets/styles/createairline.css'
 // import { useDispatch } from "react-redux";
 import { createAirline } from '../redux/actions/airline'
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import Navbar from '../components/Navbar'
 
 export default function CreateAirline() {
     // const dispatch = useDispatch()
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const [name, setName] = useState("")
     const [PIC, setPIC] = useState("")
     const [phone, setPhone] = useState("")
@@ -38,6 +38,7 @@ export default function CreateAirline() {
                 text: 'Add airline success',
                 icon: 'success',
             })
+            return navigate('/airline')
         }
 
         setIsLoading(false);

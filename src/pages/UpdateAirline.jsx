@@ -49,6 +49,7 @@ export default function UpdateAirline() {
                 icon: 'success',
             })
             dispatch(getDetailAirline(id, navigate))
+            navigate('/airline')
         }
 
         setIsLoading(false);
