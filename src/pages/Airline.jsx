@@ -61,7 +61,7 @@ export default function Airline() {
       {
         airline.data.map((item, index) => (
           <div key={index}>
-            <CardList title={item.name} pic={item.pic} phone={item.phone} date={item.created_date} src={`${process.env.REACT_APP_API_URL}/${item.photo}`} isActive={item.is_active ? "Active" : "Non Active"} btnIsActive={() => onSuspend(item.id, item.is_active ? false : true)} btnUpdate={() => navigate(`${process.env.REACT_APP_API_URL}/airline/${item.id}`)} btnDelete={() => onDelete(item.id)} />
+            <CardList title={item.name} pic={item.pic} phone={item.phone} date={item.created_date} src={`${process.env.REACT_APP_API_URL}/${item.photo}`} isActive={item.is_active ? "Active" : "Non Active"} btnIsActive={() => onSuspend(item.id, item.is_active ? false : true)} btnUpdate={() => navigate(`/airline/${item.id}`)} btnDelete={() => onDelete(item.id)} />
           </div>
         ))
       }
