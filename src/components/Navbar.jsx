@@ -82,7 +82,7 @@ function App() {
                   </DropdownItem>
                   <DropdownItem
                     onClick={() => {
-                      navigate("/login");
+                      navigate("/product");
                     }}
                   >
                     list product
