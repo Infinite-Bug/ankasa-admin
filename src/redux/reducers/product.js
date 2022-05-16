@@ -11,18 +11,18 @@ const initialState = {
     error: null,
 };
 
-const AirlineDetailReducer = (state = initialState, action) => {
+const ProductDetailReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_DETAIL_AIRLINE_PENDING:
+        case GET_DETAIL_PRODUCT_PENDING:
             return { ...state, isLoading: true };
-        case GET_DETAIL_AIRLINE_SUCCESS:
+        case GET_DETAIL_PRODUCT_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 isError: false,
                 data: action.payload.data,
             };
-        case GET_DETAIL_AIRLINE_FAILED:
+        case GET_DETAIL_PRODUCT_FAILED:
             return {
                 ...state,
                 isLoading: false,
@@ -34,4 +34,4 @@ const AirlineDetailReducer = (state = initialState, action) => {
     }
 };
 
-export default AirlineDetailReducer;
+export default ProductDetailReducer;
