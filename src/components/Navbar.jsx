@@ -49,7 +49,7 @@ function App() {
             <div className="form-admin col-4">
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  airlines
+                  Airlines
                 </DropdownToggle>
                 <DropdownMenu end>
                   <DropdownItem
@@ -57,20 +57,20 @@ function App() {
                       navigate("/createAirline");
                     }}
                   >
-                    add airlines
+                    Add Airlines
                   </DropdownItem>
                   <DropdownItem
                     onClick={() => {
                       navigate("/airline");
                     }}
                   >
-                    list airlines
+                    List Airlines
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               <UncontrolledDropdown nav inNavbar style={{ marginLeft: "40px" }}>
                 <DropdownToggle nav caret>
-                  product
+                  Product
                 </DropdownToggle>
                 <DropdownMenu end>
                   <DropdownItem
@@ -78,14 +78,14 @@ function App() {
                       navigate("/add-product");
                     }}
                   >
-                    add product
+                    Add Product
                   </DropdownItem>
                   <DropdownItem
                     onClick={() => {
                       navigate("/product");
                     }}
                   >
-                    list product
+                    List Product
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
