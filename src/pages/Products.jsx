@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import moment from "moment";
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { Table, Button, Row, Col, Navbar } from 'reactstrap';
 import { getListProduct, deleteProduct } from '../redux/actions/product';
 import Swal from 'sweetalert2';
@@ -9,7 +8,6 @@ import style from '../assets/styles/utility';
 import '../assets/styles/utility.css';
 
 export default function Products() {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   
   const product = useSelector((state) => {
