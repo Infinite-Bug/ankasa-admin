@@ -4,7 +4,8 @@ const initialState = {
   isLoading: false,
   isError: false,
   data: [],
-  error: null
+  error: null,
+  pagination: null,
 }
 
 const listProductReducer = (state = initialState, action) => {
@@ -16,7 +17,8 @@ const listProductReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isError: false,
-        data: action.payload.data
+        data: action.payload.data,
+        pagination: action.payload.pagination,
       }
     case GET_PRODUCT_FAILED:
       return {

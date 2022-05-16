@@ -2,14 +2,16 @@ import React, { useEffect } from "react";
 import moment from "moment";
 import Nav from "../components/Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Table, Button, Row, Col } from "reactstrap";
 import { getListProduct, deleteProduct } from "../redux/actions/product";
 import Swal from "sweetalert2";
 import style from "../assets/styles/utility";
 import "../assets/styles/utility.css";
+import Pagination from "../components/Pagination";
 
 export default function Products() {
+  const [queryParams] = useSearchParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const product = useSelector((state) => {
@@ -17,10 +19,19 @@ export default function Products() {
   });
 
   useEffect(() => {
-    dispatch(getListProduct());
     document.title = `${process.env.REACT_APP_APP_NAME} | Product`;
     window.scrollTo(0, 0);
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    let url = `${process.env.REACT_APP_API_URL}/product?`;
+
+    if (queryParams.get('page')) {
+      url += `&page=${queryParams.get('page')}`;
+    }
+
+    dispatch(getListProduct(url));
+  }, [dispatch, queryParams])
 
   const onDelete = (id) => {
     Swal.fire({
@@ -47,6 +58,14 @@ export default function Products() {
           });
       }
     });
+  };
+
+  const applyFilter = (page = "") => {
+    let url = "/product?";
+    if (page) {
+      url += `&page=${page}`;
+    }
+    return navigate(url);
   };
 
   return (
@@ -123,6 +142,14 @@ export default function Products() {
             ))}
           </tbody>
         </Table>
+        <div>
+          {product.data.length && (
+            <Pagination
+              pagination={product.pagination}
+              applyFilter={applyFilter}
+            />
+          )}
+        </div>
         <div>
           <Row>
             <Col md={2}>
