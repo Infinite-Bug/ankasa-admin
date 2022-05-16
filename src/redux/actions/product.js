@@ -19,7 +19,7 @@ export const getListProduct = () => async (dispatch) => {
     const res = await axios.get(`${process.env.REACT_APP_API_URL}/product`, {
       headers: { token },
     });
-
+    
     dispatch({
       type: GET_PRODUCT_SUCCESS,
       payload: res.data

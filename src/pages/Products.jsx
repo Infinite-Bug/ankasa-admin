@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import moment from "moment";
+import Nav from '../components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import { Table, Button, Row, Col, Navbar } from 'reactstrap';
 import { getListProduct, deleteProduct } from '../redux/actions/product';
 import Swal from 'sweetalert2';
@@ -8,10 +10,10 @@ import style from '../assets/styles/utility';
 import '../assets/styles/utility.css';
 
 export default function Products() {
-  const dispatch = useDispatch()
-  
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const product = useSelector((state) => {
-    return state.listProduct
+    return state.listProducts
   })
 
   useEffect(() => {
@@ -48,7 +50,7 @@ export default function Products() {
   }
 
   return <>
-    <Navbar />
+    <Nav />
     <div style={style.tableMargin}>
       <h1 className="text-center">Tickets</h1>
       <Table striped bordered>
@@ -67,14 +69,13 @@ export default function Products() {
         </thead>
         <tbody>
           {
-            product.data.map((item, index) => (
-              <div key={index}>
-                <tr>
+            product.data.map((item) => (
+                <tr key={item.id}>
                   <th scope="row">
                     {item.id}
                   </th>
                   <td>
-                    {item.airline}
+                    {item.name}
                   </td>
                   <td>
                     {item.origin}
@@ -112,7 +113,7 @@ export default function Products() {
                     </Row>
                     <Row className="py-2">
                       <Col>
-                        <Button color="primary" href='/edit-product/1'>Edit</Button>
+                        <Button color="primary" onClick={() => navigate(`/edit-product/${item.id}`)}>Edit</Button>
                       </Col>
                     </Row>
                     <Row className="py-2">
@@ -122,7 +123,6 @@ export default function Products() {
                     </Row>
                   </td>
                 </tr>
-              </div>
             ))
           }
         </tbody>
