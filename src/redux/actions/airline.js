@@ -72,7 +72,7 @@ export const getDetailAirline = (id, navigate) => async (dispatch) => {
         const token = localStorage.getItem("token");
 
         dispatch({
-            type: GET_DETAIL_AIRLINE_FAILED,
+            type: GET_DETAIL_AIRLINE_PENDING,
             payload: null,
         });
 
@@ -98,7 +98,7 @@ export const getDetailAirline = (id, navigate) => async (dispatch) => {
         }
 
         dispatch({
-            type: GET_DETAIL_AIRLINE_PENDING,
+            type: GET_DETAIL_AIRLINE_FAILED,
             payload: error.message,
         });
     }
