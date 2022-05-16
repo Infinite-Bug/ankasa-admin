@@ -4,7 +4,7 @@ export default function Landing() {
   return (
     <>
       <Navbar />
-      <div>Landing</div>
+      <h1 className="mt-4 text-center">Selamat Datang Admin</h1>
     </>
   );
 }

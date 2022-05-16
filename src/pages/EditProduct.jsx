@@ -63,8 +63,6 @@ export default function AddProduct() {
       });
   }, [params.id, token]);
 
-  console.log(form);
-
   const onChangeHandler = (e) => {
     setForm({
       ...form,
