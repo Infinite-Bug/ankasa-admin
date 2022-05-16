@@ -3,6 +3,7 @@ import '../assets/styles/createairline.css'
 import { useDispatch, useSelector } from "react-redux";
 import { getDetailAirline, updateAirline } from '../redux/actions/airline'
 import { useNavigate, useParams } from "react-router-dom";
+import Navbar from '../components/Navbar'
 import Swal from 'sweetalert2'
 
 export default function UpdateAirline() {
@@ -22,7 +23,6 @@ export default function UpdateAirline() {
 
     // photo
     const [photo, setPhoto] = useState("")
-
 
     useEffect(() => {
         dispatch(getDetailAirline(id, navigate))
@@ -56,6 +56,7 @@ export default function UpdateAirline() {
     }
     return (
         <>
+            <Navbar/>
             <>
                 <div className="container-fluid hanifAirline ml-0 mr-0">
                     <div className="card w-100">
