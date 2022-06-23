@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/Infinite-Bug/ankasa-admin">
+    <img src="/public/ankasaLogo.png" alt="Logo">
+  </a>
 
-### `npm start`
+<h3 align="center">ANKASA ADMIN</h3>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Landing Page](/public/Admin.png)
+Admin page for website ankasa: [Ankasa](https://ankasa-flight.netlify.app)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built With
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* [React.js](https://reactjs.org/)
+* [Bootstrap](https://getbootstrap.com)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- GETTING STARTED -->
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This is an example of how you may install this Project.
 
-### Code Splitting
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Get the API from my github at [ankasa API](https://github.com/andry-pebrianto/ankasa-api)
+2. Clone the repo
+   ```sh
+   git clone [https://github.com/rikakus/Peworld](https://github.com/Infinite-Bug/ankasa-admin)
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `.env`
+   ```js
+   REACT_APP_APP_NAME= your name website
+   REACT_APP_NODE_ENV= mode you use
+   REACT_APP_API_URL= where you run API
+   ```
 
-### Analyzing the Bundle Size
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+<!-- USAGE EXAMPLES -->
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Login
 
-### Advanced Configuration
+![Login](/public/AdminLogin.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### Landing Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![Landing Page](/public/Admin.png)
 
-### `npm run build` fails to minify
+### Add Ticket
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Add Ticket](/public/AdminAddTicket.png)
+
+### List Ticket
+
+![List Ticket](/public/AdminListTicket.png)
+
+### Add Airlines
+
+![Recipe](/public/AdminAddair.png)
+
+### List Airlines
+
+![Recipe](/public/AdminListAir.png)
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Andry Pebrianto - [@andry-pebrianto](https://github.com/andry-pebrianto)
+Bagus Dzikri Hidayat - [@bagus25dzikri06](https://github.com/bagus25dzikri06)
+Muhamad Hakam Faza - [@hakamfaza](https://github.com/hakamfaza)
+Hanifudin Alfauzi - [@hanifudin0597](https://github.com/hanifudin0597)
+Ian Pangestu - [@rikakus](https://github.com/rikakus)
+
+Project Link: [https://ankasa-flight-admin.netlify.app](https://ankasa-flight-admin.netlify.app)
+
+Link API:  [https://github.com/andry-pebrianto/ankasa-api](https://github.com/andry-pebrianto/ankasa-api)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
