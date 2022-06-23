@@ -66,7 +66,7 @@ This is an example of how you may install this Project.
 1. Get the API from my github at [ankasa API](https://github.com/andry-pebrianto/ankasa-api)
 2. Clone the repo
    ```sh
-   git clone [https://github.com/rikakus/Peworld](https://github.com/Infinite-Bug/ankasa-admin)
+   git clone https://github.com/Infinite-Bug/ankasa-admin
    ```
 3. Install NPM packages
    ```sh
@@ -129,9 +129,13 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Andry Pebrianto - [@andry-pebrianto](https://github.com/andry-pebrianto)
+
 Bagus Dzikri Hidayat - [@bagus25dzikri06](https://github.com/bagus25dzikri06)
+
 Muhamad Hakam Faza - [@hakamfaza](https://github.com/hakamfaza)
+
 Hanifudin Alfauzi - [@hanifudin0597](https://github.com/hanifudin0597)
+
 Ian Pangestu - [@rikakus](https://github.com/rikakus)
 
 Project Link: [https://ankasa-flight-admin.netlify.app](https://ankasa-flight-admin.netlify.app)
